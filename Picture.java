@@ -13,6 +13,8 @@ public class Picture
 {
     private Square building;
     private Square window;
+    private Square grass;
+    private Square sky;
     private Triangle mountain;
     private Circle sun;
     private boolean drawn;
@@ -24,6 +26,8 @@ public class Picture
     {
         building = new Square();
         window = new Square();
+        grass = new Square();
+        sky = new Square();
         mountain = new Triangle();  
         sun = new Circle();
         drawn = false;
@@ -36,19 +40,26 @@ public class Picture
     {
         if(!drawn) 
         {
-            building.moveHorizontal(-140);
-            building.moveVertical(20);
-            building.changeSize(120);
+            grass.changeColor("green");
+            grass.moveHorizontal(-400);
+            grass.changeSize(500);
+            grass.makeVisible();
+            
+            building.changeColor("grey");
+            building.moveHorizontal(-120);
+            building.moveVertical(30);
+            building.changeSize(60);
             building.makeVisible();
             
-            window.changeColor("black");
+            window.changeColor("blue");
             window.moveHorizontal(-120);
             window.moveVertical(40);
             window.changeSize(40);
             window.makeVisible();
-    
+            
+            mountain.changeColor("light green");
             mountain.changeSize(60, 180);
-            mountain.moveHorizontal(20);
+            mountain.moveHorizontal(-20);
             mountain.moveVertical(-60);
             mountain.makeVisible();
     
