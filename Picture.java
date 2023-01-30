@@ -6,14 +6,14 @@
  *
  * This class was written as an early example for teaching Java with BlueJ.
  * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2016.02.29
+ * @author  Damian Nunez
+ * @version January 23,2023
  */
 public class Picture
 {
-    private Square wall;
+    private Square building;
     private Square window;
-    private Triangle roof;
+    private Triangle mountain;
     private Circle sun;
     private boolean drawn;
 
@@ -22,9 +22,9 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
+        building = new Square();
         window = new Square();
-        roof = new Triangle();  
+        mountain = new Triangle();  
         sun = new Circle();
         drawn = false;
     }
@@ -34,11 +34,12 @@ public class Picture
      */
     public void draw()
     {
-        if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.makeVisible();
+        if(!drawn) 
+        {
+            building.moveHorizontal(-140);
+            building.moveVertical(20);
+            building.changeSize(120);
+            building.makeVisible();
             
             window.changeColor("black");
             window.moveHorizontal(-120);
@@ -46,10 +47,10 @@ public class Picture
             window.changeSize(40);
             window.makeVisible();
     
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
+            mountain.changeSize(60, 180);
+            mountain.moveHorizontal(20);
+            mountain.moveVertical(-60);
+            mountain.makeVisible();
     
             sun.changeColor("yellow");
             sun.moveHorizontal(100);
@@ -65,9 +66,9 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
+        building.changeColor("black");
         window.changeColor("white");
-        roof.changeColor("black");
+        mountain.changeColor("black");
         sun.changeColor("black");
     }
 
@@ -76,9 +77,9 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
+        building.changeColor("red");
         window.changeColor("black");
-        roof.changeColor("green");
+        mountain.changeColor("green");
         sun.changeColor("yellow");
     }
 }
