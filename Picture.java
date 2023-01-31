@@ -11,12 +11,17 @@
  */
 public class Picture
 {
-    private Square building;
-    private Square window;
-    private Square grass;
     private Square sky;
+    private Square building;
+    private Square building2;
+    private Square grass;
+    private Square roof;
+    private Square roof2;
+    private Triangle building3;
     private Triangle mountain;
+    private Triangle river;
     private Circle sun;
+    private Person human;
     private boolean drawn;
 
     /**
@@ -24,12 +29,17 @@ public class Picture
      */
     public Picture()
     {
-        building = new Square();
-        window = new Square();
-        grass = new Square();
         sky = new Square();
-        mountain = new Triangle();  
+        building = new Square();
+        building2 = new Square();
+        building3 = new Triangle();
+        roof = new Square();
+        roof2 = new Square();
+        grass = new Square();
+        mountain = new Triangle();
+        river = new Triangle();
         sun = new Circle();
+        human = new Person();
         drawn = false;
     }
 
@@ -39,35 +49,73 @@ public class Picture
     public void draw()
     {
         if(!drawn) 
-        {
+        {   
+            sky.changeColor("sky blue");
+            sky.moveHorizontal(-400);
+            sky.moveVertical(-120);
+            sky.changeSize(600);
+            sky.makeVisible();
+            
             grass.changeColor("green");
             grass.moveHorizontal(-400);
-            grass.changeSize(500);
+            grass.moveVertical(50);
+            grass.changeSize(600);
             grass.makeVisible();
             
+            mountain.changeColor("brown");
+            mountain.moveHorizontal(200);
+            mountain.moveVertical(-17);
+            mountain.changeSize(50,100);
+            mountain.makeVisible();
+            
             building.changeColor("grey");
-            building.moveHorizontal(-120);
+            building.moveHorizontal(100);
             building.moveVertical(30);
-            building.changeSize(60);
+            building.changeSize(25);
             building.makeVisible();
             
-            window.changeColor("blue");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
+            building2.changeColor("grey");
+            building2.moveHorizontal(70);
+            building2.moveVertical(40);
+            building2.changeSize(25);
+            building2.makeVisible();
             
-            mountain.changeColor("light green");
-            mountain.changeSize(60, 180);
-            mountain.moveHorizontal(-20);
-            mountain.moveVertical(-60);
-            mountain.makeVisible();
+            building3.changeColor("grey");
+            building3.moveHorizontal(70);
+            building3.moveVertical(0);
+            building3.changeSize(50,10);
+            building3.makeVisible();
+            
+            roof.changeColor("grey");
+            roof.moveHorizontal(-30);
+            roof.moveVertical(33);
+            roof.changeSize(10);
+            roof.makeVisible();
+            
+            roof2.changeColor("grey");
+            roof2.moveHorizontal(-38);
+            roof2.moveVertical(33);
+            roof2.changeSize(10);
+            roof2.makeVisible();
+            
+            river.changeColor("blue");
+            river.moveHorizontal(-100);
+            river.moveVertical(30);
+            river.changeSize(500,200);
+            river.makeVisible();
     
             sun.changeColor("yellow");
-            sun.moveHorizontal(100);
+            sun.moveHorizontal(160);
             sun.moveVertical(-40);
-            sun.changeSize(80);
+            sun.changeSize(40);
             sun.makeVisible();
+            
+            human.changeColor("purple");
+            human.moveHorizontal(160);
+            human.moveVertical(10);
+            human.changeSize(10,10);
+            human.makeVisible();
+            
             drawn = true;
         }
     }
@@ -78,9 +126,15 @@ public class Picture
     public void setBlackAndWhite()
     {
         building.changeColor("black");
-        window.changeColor("white");
-        mountain.changeColor("black");
+        building2.changeColor("black");
+        building3.changeColor("black");
+        roof.changeColor("black");
+        grass.changeColor("gray");
+        sky.changeColor("white");
+        mountain.changeColor("gray");
         sun.changeColor("black");
+        human.changeColor("white");
+        river.changeColor("black");
     }
 
     /**
@@ -88,9 +142,15 @@ public class Picture
      */
     public void setColor()
     {
-        building.changeColor("red");
-        window.changeColor("black");
-        mountain.changeColor("green");
+        building.changeColor("gray");
+        building2.changeColor("gray");
+        building3.changeColor("gray");
+        roof.changeColor("gray");
+        grass.changeColor("green");
+        sky.changeColor("sky blue");
+        mountain.changeColor("brown");
         sun.changeColor("yellow");
+        human.changeColor("black");
+        river.changeColor("blue");
     }
 }
