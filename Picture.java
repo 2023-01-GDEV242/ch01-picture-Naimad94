@@ -125,15 +125,16 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
+        sky.changeColor("white");
+        grass.changeColor("grey");
+        mountain.changeColor("grey");
+        sun.changeColor("black");
+        human.changeColor("white");
         building.changeColor("black");
         building2.changeColor("black");
         building3.changeColor("black");
         roof.changeColor("black");
-        grass.changeColor("gray");
-        sky.changeColor("white");
-        mountain.changeColor("gray");
-        sun.changeColor("black");
-        human.changeColor("white");
+        roof2.changeColor("black");
         river.changeColor("black");
     }
 
@@ -142,15 +143,16 @@ public class Picture
      */
     public void setColor()
     {
-        building.changeColor("gray");
-        building2.changeColor("gray");
-        building3.changeColor("gray");
-        roof.changeColor("gray");
-        grass.changeColor("green");
         sky.changeColor("sky blue");
+        grass.changeColor("green");
         mountain.changeColor("brown");
         sun.changeColor("yellow");
         human.changeColor("black");
+        building.changeColor("grey");
+        building2.changeColor("grey");
+        building3.changeColor("grey");
+        roof.changeColor("grey");
+        roof2.changeColor("grey");
         river.changeColor("blue");
     }
 }

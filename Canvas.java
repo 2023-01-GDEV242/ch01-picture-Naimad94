@@ -8,10 +8,9 @@ import java.util.*;
  * This is a modification of the general purpose Canvas, specially made for
  * the BlueJ "shapes" example. 
  *
- * @author: Bruce Quig
- * @author: Michael Kšlling (mik)
+ * @author: Damian Nunez
  *
- * @version 2016.02.29
+ * @version 01.31.23
  */
 public class Canvas
 {
@@ -27,7 +26,8 @@ public class Canvas
      */
     public static Canvas getCanvas()
     {
-        if(canvasSingleton == null) {
+        if(canvasSingleton == null) 
+        {
             canvasSingleton = new Canvas("BlueJ Picture Demo", 500, 300, 
                                          Color.white);
         }
@@ -75,7 +75,8 @@ public class Canvas
      */
     public void setVisible(boolean visible)
     {
-        if(graphic == null) {
+        if(graphic == null) 
+        {
             // first time: instantiate the offscreen image and fill it with
             // the background color
             Dimension size = canvas.getSize();
@@ -230,7 +231,8 @@ public class Canvas
     private void redraw()
     {
         erase();
-        for(Object shape : objects) {
+        for(Object shape : objects) 
+        {
             shapes.get(shape).draw(graphic);
         }
         canvas.repaint();
